@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a job</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@pipedrive/app-extensions-sdk@0/dist/index.umd.js"></script>
+  </head>
+  <body>
+    <form id="myForm" method="POST">
+      <!-- Client details -->
+      <fieldset>
+        <div class="legend"><legend>Client details</legend></div>
+
+        <input type="text" id="firstName" name="firstName" required placeholder="First name"/>
+
+        <input type="text" id="lastName" name="lastName" required placeholder="Last name"/>
+
+        <input type="text" id="phone" name="phone" required placeholder="Phone"/>
+
+        <input type="email" id="email" name="email" placeholder="Email (optional)" />
+      </fieldset>
+
+      <!-- Job details -->
+      <fieldset>
+        <div class="legend"><legend>Job details</legend></div>
+
+        <select id="jobType" name="jobType" required>
+          <option value="">Select job type</option>
+          <option value="Dishwasher repair">Dishwasher repair</option>
+          <option value="Cleaning services">Cleaning services</option>
+          <option value="Furniture assembly">Furniture assembly</option>
+        </select>
+
+        <select id="jobSource" name="jobSource" required>
+          <option value="">Job source</option>
+          <option value="Tampa">GL Tampa</option>
+          <option value="Miami">GL Miami</option>
+          <option value="Orlando">GL Orlando</option>
+          <option value="Houston">GL Houston</option>
+          <option value="Charlotte">GL Charlotte</option>
+          <option value="Austin">GL Austin</option>
+        </select>
+
+        <textarea id="jobDescription" name="jobDescription" placeholder="Job description (optional)"></textarea>
+      </fieldset>
+
+      <!-- Service location -->
+      <fieldset>
+        <div class="legend"><legend>Service location</legend></div>
+
+        <input type="text" id="address" name="address" required placeholder="Address">
+
+        <input type="text" id="city" name="city" required placeholder="City">
+
+        <input type="text" id="state" name="state" required placeholder="State">
+
+        <input type="text" id="zipcode" name="zipcode" required placeholder="Zip code">
+
+        <select id="area" name="area" required>
+          <option value="">Area</option>
+          <option value="Tampa">Tampa</option>
+          <option value="Miami">Miami</option>
+          <option value="Orlando">Orlando</option>
+          <option value="Houston">Houston</option>
+          <option value="Charlotte">Charlotte</option>
+          <option value="Austin">Austin</option>
+        </select>
+      </fieldset>
+      
+      <!-- Scheduled -->
+      <fieldset>
+        <div class="legend"><legend>Scheduled</legend></div>
+
+        <input type="date" id="date" name="date" required>
+    
+        <input type="time" id="startTime" name="startTime" required>
+    
+        <input type="time" id="endTime" name="endTime" required>
+    
+        <!-- Populated in js -->
+        <select id="technician" name="technician" required>
+          <option value="">Select technician</option>
+        </select>
+      </fieldset>
+
+      <button id="submit" type="button">Add client</button>
+      <button id="saveInfo" type="button">Save info</button>
+    </form>
+
+    <div id="spinner-overlay" style="display: none;">
+      <div id="spinner"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
